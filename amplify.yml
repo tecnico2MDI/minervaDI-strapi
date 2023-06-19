@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - npm i strapi@alpha -g
         - npm install
     build:
       commands:
