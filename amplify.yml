@@ -10,7 +10,7 @@ frontend:
         - npm run build
     postBuild:
       commands:
-        - npm start
+        - npm start:amplify
   artifacts:
     baseDirectory: build
     files:
