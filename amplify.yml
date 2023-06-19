@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - npm install -g pm2
         - npm i strapi@alpha -g
         - npm install
     build:
@@ -10,7 +11,7 @@ frontend:
         - npm run build
     postBuild:
       commands:
-        - npm start:amplify
+        - pm2 start npm -- start
   artifacts:
     baseDirectory: build
     files:

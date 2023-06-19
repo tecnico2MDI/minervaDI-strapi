@@ -6,7 +6,6 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
-    "start:amplify": "strapi start &",
     "build": "strapi build",
     "strapi": "strapi"
   },
