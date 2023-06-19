@@ -11,7 +11,7 @@ frontend:
         - npm run build
     postBuild:
       commands:
-        - pm2 start npm -- start
+        - node server.js
   artifacts:
     baseDirectory: build
     files:
