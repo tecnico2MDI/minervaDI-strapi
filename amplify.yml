@@ -13,7 +13,7 @@ frontend:
       commands:
         - node server.js
   artifacts:
-    baseDirectory: build
+    baseDirectory: ./frontend/build
     files:
       - '**/*'
   cache:
