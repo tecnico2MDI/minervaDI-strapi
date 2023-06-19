@@ -4,6 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm install -g pm2
+        - mkdir -p build
         - npm i strapi@alpha -g
         - npm install
     build:
@@ -13,7 +14,7 @@ frontend:
       commands:
         - node server.js
   artifacts:
-    baseDirectory: ./frontend/build
+    baseDirectory: build
     files:
       - '**/*'
   cache:
