@@ -19,8 +19,8 @@ backend:
   phases:
     build:
       commands:
-        - cd ./backend
         - npm ci
+        - amplifyPush --simple
     postBuild:
       commands:
         - npm run build
