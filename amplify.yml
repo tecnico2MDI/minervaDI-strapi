@@ -14,9 +14,18 @@ frontend:
       commands:
         - node server.js
   artifacts:
-    baseDirectory: ./
+    baseDirectory: .
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'
