@@ -24,6 +24,7 @@ backend:
   phases:
     build:
       commands:
+        - npm install
         - amplifyPush --simple
   artifacts:
     baseDirectory: .
