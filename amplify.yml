@@ -14,7 +14,7 @@ frontend:
       commands:
         - node server.js
   artifacts:
-    baseDirectory: ./backend/build
+    baseDirectory: ./minervaDI/build
     files:
       - '**/*'
   cache:
