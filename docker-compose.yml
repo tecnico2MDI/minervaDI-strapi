@@ -1,27 +1,10 @@
 version: '3'
 services:
-  db:
-    container_name: db
-    image: postgres
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=strapi
-      - POSTGRES_PASSWORD=strapi
-      - POSTGRES_DB=strapi
-    volumes:
-      - ./data:/var/lib/postgresql/data
-    networks:
-      - strapi
   strapi:
     container_name: strapi
     build:
       context: .
       dockerfile: ./Dockerfile
-    env_file: .env
-    links:
-      - db
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
@@ -39,10 +22,3 @@ services:
       - ./app:/srv/app
     ports:
       - "${PORT}:${PORT}"
-    networks:
-      - strapi
-    depends_on:
-      - db
-networks:
-  strapi:
-    driver: local
